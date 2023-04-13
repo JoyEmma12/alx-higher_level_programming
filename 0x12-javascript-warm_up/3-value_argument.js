@@ -1,8 +1,3 @@
 #!/usr/bin/node
 
-if (process.argv[2])
-{
-	 console.log(process.argv[2]);
-} else {
-	 console.log('No arguement');
-}
+console.log(typeof process.argv[2] === 'undefined' ? 'No arguemet' : process.argv[2]);
