@@ -13,8 +13,7 @@ print () {
 	for (let i = 0; i < this.height; ++i)  {
 		let j = 0;
 
-		while (j < this.width) {
-			++j;
+		for (; j < this.width; ++j) {
 			process.stdout.write('X');
 		}
 
