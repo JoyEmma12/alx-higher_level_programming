@@ -4,7 +4,7 @@
 """
 Scripts that list all states
 with a name starting with N
-from the database
+from the database.
 """
 
 import MySQLdb
@@ -12,7 +12,7 @@ import sys
 
 if __name__ == '__main__':
     """
-    Get the states from the database
+    Get the states from the database.
     """
 
     use = sys.argv[1]
