@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """
 Scripts that list all states
 with a name starting with N
@@ -19,13 +18,11 @@ if __name__ == '__main__':
     pss = sys.argv[2]
     databse = sys.argv[3]
 
-    db = MySQLdb.connect(host = 'localhost', user = use, password = pss, db = databse, port = 3306)
+    db = MySQLdb.connect(host='localhost', user=use, password=pss, db=databse, port=3306)
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states \
-                 WHERE name LIKE BINARY 'N%' \
-                 ORDER BY states.id ASC")
-
-    rows = cursor.fetchall()
-
-    for row in rows:
-        print(row)
+		    WHERE name LIKE BINARY 'N%' \
+		    ORDER BY states.id ASC")
+rows = cursor.fetchall()
+for row in rows:
+      print(row)
