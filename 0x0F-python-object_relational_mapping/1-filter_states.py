@@ -8,9 +8,9 @@ if __name__ == '__main__' :
     pss = sys.argv[2]
     databse = sys.argv[3]
 
-    db = MySQLdb.connect('host = localhost',
+    db = MySQLdb.connect(host = 'localhost',
                          user = use,
-                         passwrd = passwrd,
+                         password = pss,
                          db = databse,
                          port = 3306)
     cursor = db.cursor()
