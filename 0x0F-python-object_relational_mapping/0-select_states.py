@@ -1,14 +1,22 @@
 #!/usr/bin/python3
 
 import MySQLdb
-from sys import argv
+import sys
 
-if ___name___ == '__main__':
-db = MySQLdb.connect(host="localhost", port=3306, user=argv[1], password=argv[2], db=argv[3])
+if __name__ == '__main__' :
+    use = sys.argv[1]
+    pss = sys.argv[2]
+    databse = sys.argv[3]
 
-cur = db.cursor()
-	cur.execute("SELECT * FROM states")
-	rows = cur.fetchall()
+    db = MySQLdb.connect('host = localhost',
+                         user = use,
+                         passwrd = passwrd,
+                         db = databse,
+                         port = 3306)
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states")
 
-	for row in rows:
-	print(row)
+    rows = cursor.fetchall()
+
+    for row in rows:
+        print(row)   
