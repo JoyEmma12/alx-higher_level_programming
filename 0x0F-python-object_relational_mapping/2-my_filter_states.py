@@ -15,9 +15,9 @@ if __name__ == '__main__':
        """
        us = sys.argv[1]
        pss = sys.argv[2]
-       db = sys.argv[3]
+       dbs = sys.argv[3]
 
-       db = MySQLdb.connect(host='localhost', port=3306, user=us, password=pss, database=db)
+       db = MySQLdb.connect(host='localhost', port=3306, user=us, password=pss, database=dbs)
 
        cur = db.cursor()
        cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC".format(argv[4]))
