@@ -4,6 +4,7 @@ Scripts that lists all states
 from the database.
 """
 
+
 import sys
 import MySQLdb
 
