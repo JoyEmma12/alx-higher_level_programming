@@ -1,10 +1,17 @@
 #!/usr/bin/python3
+"""
+Scripts that lists all states
+from the database.
+"""
 
 import sys
 import MySQLdb
 
 if __name__ == '__main__':
-
+    """
+    Lists states in the result
+    of the database.
+    """
     us = sys.argv[1]
     ps = sys.argv[2]
     dbe = sys.argv[3]
