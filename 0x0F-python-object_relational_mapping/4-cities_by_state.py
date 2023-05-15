@@ -13,5 +13,5 @@ if __name__ == "__main__":
     db = MySQLdb.connect(
         user=sys.argv[1], password=sys.argv[2], database=sys.argv[3])
     cur = db.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name FROM cities JOIN states ON cities.states_id = states.id ORDER BY cities.id ASC")
-    [print(cities) for cities in cur.fetchall()]
+    cur.execute("SELECT `cities`.`id`, `cities`.`name`, `states`.`name` FROM `cities` JOIN `states` ON `cities`.`states_id` = `states`.`id` ORDER BY `cities`.`id` ASC")
+    [print(city) for city in cur.fetchall()]
