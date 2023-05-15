@@ -1,26 +1,19 @@
 #!/usr/bin/python3
 """
-This script takes in arguements
-and displays all values in the
-states table of the database.
-
-Script that is safe from MySQL
-injections.
+Script that takes in arguements and displays arguements
+where name matches the arguement
+and is safe from MySQL arguements
 """
-if __name__ == '__main__':
+
+import sys
+import MySQLdb
+
+if __name__ == "__main__":
     """
-    Access the database and get states
-    from the database.
+    safe from MySQL arguements
     """
-
-    db = MySQLbd.connect(host="localhost", user=argv[1], port=3306, passwd=argv[2], db=argv[3])
-
-    with db.cursor as mycur:
-        mycur.execute("""
-			SELECT * FROM states WHERE name LIKE BINARY %(name)s ORDER BY states.id ASC""", {'name': argv[4]})
-
-	rows = mycur.fetchall()
-
-      if rows is not None:
-          for row in rows:
-	      print(row)
+    db = MySQLdb.connect(
+        user=sys.argv[1], password=sys.argv[2], database=sys.argv[3])
+    cur = db.cursor()
+    cur.execute("SELECT * FROM `states`")
+    [print(state) for state in cur.fetchall() if state[1] == sys.argv[4]]
