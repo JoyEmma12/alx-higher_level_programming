@@ -1,0 +1,4 @@
+$("DIV#add_item").click(function () {
+  item = $("<li></li>").text("Item");
+  $(".my_list").append(item);
+});
